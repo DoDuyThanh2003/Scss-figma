@@ -4,6 +4,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
 }
 body {
     max-width: 2000px;
@@ -16,6 +18,7 @@ body {
     height: 84px;
     width: 100%;
     display: flex;
+    background-color: $silver-color;
 }
 
 .header__logo {
@@ -63,6 +66,8 @@ body {
 
 .content {
     width: 100%;
+    @include gapStyle();
+    gap: 40px;
 }
 
 .container {
@@ -73,7 +78,7 @@ body {
 .content__slider {
     position: relative;
     overflow: hidden;
-
+    background-color: $silver-color;
     .slides {
         width: 300%;
         display: flex;
@@ -85,6 +90,17 @@ body {
             width: 100%;
             @include slider();
         }
+    }
+    .slider-controls {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center;
+        padding: 10px 0 ;
+        &__btn {
+            display: flex;
+            gap: 8px;
+        }
+
     }
 }
 
@@ -152,7 +168,7 @@ body {
 
         .manage__content__member {
             width: 15%;
-            box-shadow: 0 10px 10px;
+            box-shadow: 0px 2px 4px 0px rgba(171, 190, 209, 0.4);
             @include gapStyle();
             gap: 20px;
             padding: 20px 0;
@@ -168,7 +184,7 @@ body {
 
         .manage__content__national {
             width: 15%;
-            box-shadow: 0 10px 10px;
+            box-shadow: 0px 2px 4px 0px rgba(171, 190, 209, 0.4);
             @include gapStyle();
             gap: 20px;
             padding: 20px 0;
@@ -184,7 +200,7 @@ body {
 
         .manage__content__groups {
             width: 15%;
-            box-shadow: 0 5px 5px;
+            box-shadow: 0px 2px 4px 0px rgba(171, 190, 209, 0.4);
             @include gapStyle();
             gap: 20px;
             padding: 20px 0;
@@ -247,7 +263,7 @@ body {
                     color: $white-color;
                     width: 151px;
                     height: 52px;
-                    border-radius: 10px;
+                    border-radius: 4px;
                     border: none;
                 }
 
@@ -366,7 +382,7 @@ body {
                         background-color: $green-color;
                         border: none;
                         color: $white-color;
-                        border-radius: 10px;
+                        border-radius: 4px;
                     }
 
                 }
@@ -380,11 +396,17 @@ body {
         gap: 78px;
         background-color: $silver-color;
         justify-content: center;
+        padding: 10px 0;
+        &__img{
+            @include betweenStyle();
+           img {
+            display: inline;
+           } 
+        }
         &__content {
-            width: 45%;
+            width: 40%;
             @include gapStyle();
             gap: 32px;
-            // height: 70%;
             margin: auto 0;
 
             .airport__title {
@@ -414,8 +436,7 @@ body {
             }
 
             .airport__body {
-                width: 85%;
-
+                width: 100%;
                 &__icon {
                     display: flex;
                     gap: 32px;
@@ -424,10 +445,13 @@ body {
                         display: flex;
                         gap: 41px;
                     }
-
+                    &-logo a :hover{
+                        filter: invert(13%) sepia(73%) saturate(7043%) hue-rotate(262deg) brightness(83%) contrast(106%);
+                    }
                     &-custom {
+   
                         margin: auto 0;
-
+                        display: flex;
                         a {
                             text-decoration: none;
                             color: $green-color;
@@ -488,12 +512,11 @@ body {
 
 .footer {
     @include gapStyle();
-    gap: 32px;
-
     &__header {
         @include gapStyle();
         gap: 32px;
-
+        background-color: $silver-color;
+        padding-bottom: 32px;
         &__title {
             width: 40%;
             color: $black-color;
@@ -558,17 +581,20 @@ body {
                     font-size: 20px;
                 }
 
-                &__content {
-                    position: relative;
+                    &__content {
+                        position: relative;
 
-                    input {
-                        border-radius: 8px;
-                        padding: 10px;
-                        background-color: $grey-color;
-                        color: white !important;
-                        width: 100%;
-                    }
-
+                        input {
+                            border-radius: 8px;
+                            padding: 10px;
+                            background-color: $grey-color;
+                            color: white !important;
+                            width: 100%;
+                            &::placeholder{
+                                color: $gray300-color;
+                            }
+                        }
+                        
                     img {
                         position: absolute;
                         top: 50%;
