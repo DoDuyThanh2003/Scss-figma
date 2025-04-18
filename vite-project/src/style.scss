@@ -4,15 +4,15 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman', Times, serif;
     line-height: 1.5;
-}
+    font-family: 'Inter';
+} 
 body {
     max-width: 2000px;
     margin: 0 auto;
     padding: 0;
     width: 100%;
-    ;
+    // font-family: 'Inter';
 }
 .header {
     height: 84px;
@@ -22,7 +22,7 @@ body {
 }
 
 .header__logo {
-    width: 20%;
+    width: 30%;
 
     &-img {
         @include centerStyle();
@@ -30,7 +30,7 @@ body {
 }
 
 .header__navigation {
-    width: 60%;
+    width: 40%;
 
     &-nav {
         list-style: none;
@@ -46,7 +46,7 @@ body {
 }
 
 .header__account {
-    width: 20%;
+    width: 30%;
     gap: 20px;
     @include centerStyle();
 
@@ -59,7 +59,7 @@ body {
     &-signup {
         color: $white-color;
         background-color: $green-color;
-        border-radius: 10px;
+        border-radius: 4px;
         @include accountStyle();
     }
 }
@@ -93,12 +93,30 @@ body {
     }
     .slider-controls {
         display: flex;
-        justify-content: center; /* Căn giữa theo chiều ngang */
+        justify-content: center;
         align-items: center;
         padding: 10px 0 ;
         &__btn {
             display: flex;
             gap: 8px;
+            input {
+                display: none;
+            }
+            label {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin: 2px;
+                // border: 2px solid #ccc;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: 0.3s;
+                background-color: #b9f3bb;
+            }
+            input:checked +label {
+                background-color: $green-color;
+                border-color: #4CAF50;
+            }
         }
 
     }
@@ -114,6 +132,7 @@ body {
         @include centerStyle();
         height: 44px;
         @include fontSize36();
+        font-weight: bold;
     }
 
     &-content {
@@ -149,15 +168,17 @@ body {
         gap: 5px;
 
         &-max {
-            width: 40%;
+            width: 28%;
             margin: 0 auto;
             @include fontSize36();
             text-align: center;
+            font-weight: bold;
         }
 
         &-min {
             color: $grey-color;
             text-align: center;
+            font-size: 16px;
         }
     }
 
@@ -167,7 +188,7 @@ body {
         justify-content: space-evenly;
 
         .manage__content__member {
-            width: 15%;
+            width: 16%;
             box-shadow: 0px 2px 4px 0px rgba(171, 190, 209, 0.4);
             @include gapStyle();
             gap: 20px;
@@ -183,7 +204,7 @@ body {
         }
 
         .manage__content__national {
-            width: 15%;
+            width: 16%;
             box-shadow: 0px 2px 4px 0px rgba(171, 190, 209, 0.4);
             @include gapStyle();
             gap: 20px;
@@ -194,12 +215,19 @@ body {
             }
 
             &-text {
-                @include manage_text();
+                width: 80%;
+                @include betweenStyle();
+                margin: 0 auto;
+                font-size: 14px;
+                color: $grey-color;
+                p {
+                    text-align: center;
+                }
             }
         }
 
         .manage__content__groups {
-            width: 15%;
+            width: 16%;
             box-shadow: 0px 2px 4px 0px rgba(171, 190, 209, 0.4);
             @include gapStyle();
             gap: 20px;
@@ -220,38 +248,37 @@ body {
     width: 100%;
     @include gapStyle();
     gap: 48px;
-
     &__account {
         width: 100%;
         display: flex;
         justify-content: center;
         gap: 20px;
-        // margin-top: 20px;
-
         &__logo {
             width: 31%;
         }
-
         &__conten {
             @include gapStyle();
             gap: 20px;
-            width: 35%;
+            width: 40%;
             margin: auto 0;
+            font-weight:bold ;
 
             &-text {
-                width: 85%;
+                width: 80%;
                 @include gapStyle();
                 gap: 20px;
 
                 .product_header {
+                    width: 90%;
                     p {
                         @include fontSize36();
                     }
                 }
-
                 .product_body {
+                    width: 100%;
                     font-size: 14px;
                     color: $grey-color;
+                    font-weight: 400;
                 }
             }
 
@@ -289,7 +316,8 @@ body {
             &__title {
                 p {
                     font-size: 36px;
-
+                    font-weight: bold;
+                    color: $d_grey-color;
                     span {
                         color: $green-color;
                         display: block;
@@ -352,7 +380,7 @@ body {
             }
 
             &__content {
-                width: 35%;
+                width: 40%;
                 height: 70%;
                 @include gapStyle();
                 gap: 32px;
@@ -364,8 +392,10 @@ body {
                     gap: 16px;
 
                     &__header {
+                        width: 100%;
                         p {
                             @include fontSize36();
+                            font-weight: bold;
                         }
                     }
 
@@ -377,8 +407,8 @@ body {
 
                 .design__footer__btn {
                     button {
-                        height: 52px;
-                        width: 151px;
+                        width: 50%;
+                        padding: 15px 0;
                         background-color: $green-color;
                         border: none;
                         color: $white-color;
@@ -404,7 +434,7 @@ body {
            } 
         }
         &__content {
-            width: 40%;
+            width: 47%;
             @include gapStyle();
             gap: 32px;
             margin: auto 0;
@@ -439,6 +469,7 @@ body {
                 width: 100%;
                 &__icon {
                     display: flex;
+                    flex-wrap: wrap;
                     gap: 32px;
 
                     &-logo {
@@ -449,7 +480,6 @@ body {
                         filter: invert(13%) sepia(73%) saturate(7043%) hue-rotate(262deg) brightness(83%) contrast(106%);
                     }
                     &-custom {
-   
                         margin: auto 0;
                         display: flex;
                         a {
@@ -466,7 +496,7 @@ body {
     .product__marketing {
         @include gapStyle();
         gap: 16px;
-        padding-bottom: 10%;
+        padding-bottom: 7%;
 
         &__header {
             margin: 0 auto;
@@ -477,11 +507,12 @@ body {
             .marketing__title {
                 width: 100%;
                 @include fontSize36();
+                font-weight: bold;
                 text-align: center;
             }
 
             .marketing__content {
-                width: 40%;
+                width: 53%;
                 color: $grey-color;
                 margin: 0 auto;
                 text-align: center;
@@ -523,17 +554,21 @@ body {
             font-size: 64px;
             margin: 0 auto;
             text-align: center;
+            font-weight: bold;
         }
 
         &__btn {
             @include centerItem();
 
             button {
-                padding: 20px;
+                padding: 15px 30px;
                 background-color: $green-color;
                 border: none;
                 color: $white-color;
                 border-radius: 4px;
+                img {
+                    padding-left: 10px;
+                }
             }
         }
     }
@@ -555,6 +590,10 @@ body {
                 color: $white-color;
                 @include gapStyle();
                 gap: 8px;
+            }
+            &-logo {
+                display: flex;
+                gap: 20px;
             }
         }
 
@@ -590,6 +629,7 @@ body {
                             background-color: $grey-color;
                             color: white !important;
                             width: 100%;
+                            border: none;
                             &::placeholder{
                                 color: $gray300-color;
                             }
@@ -633,7 +673,6 @@ body {
 
     .content__slider {
         .slides {
-
             &__one,
             &__two,
             &__three {
@@ -666,6 +705,7 @@ body {
 
         &__font {
             &-max {
+                width: 70% !important; 
                 h2 {
                     font-size: 30px;
                 }
@@ -712,7 +752,6 @@ body {
                 width: 100%;
                 @include centerItem();
             }
-
             &__conten {
                 order: 1;
                 width: 100%;
@@ -740,7 +779,7 @@ body {
 
         &__statistical {
             flex-direction: column;
-
+            padding: 30px 0;
             .statistical_content {
                 width: 100%;
 
@@ -802,8 +841,9 @@ body {
             gap: 0 !important;
 
             &__img {
-                @include centerItem();
-
+                display: flex !important;
+                justify-items: center;
+                justify-content: center !important;
             }
 
             &__content {
@@ -849,7 +889,7 @@ body {
         }
 
         &__marketing {
-            gap: 40px !important;
+            gap: 50px !important;
             padding-bottom: 20% !important;
 
             &__header {
@@ -872,7 +912,9 @@ body {
                         }
                     }
 
-                    &__content {}
+                    &__content {
+                        width: 20%;
+                    }
                 }
 
                 .marketing__manage {

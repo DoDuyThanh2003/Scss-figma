@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Vite App</title>
 </head>
 
@@ -16,7 +17,7 @@
         </div>
         <div class="header__navigation">
             <ul class="header__navigation-nav">
-                <li><a href="#">Home</a></li>
+                <li><a href="#"><b>Home</b></a></li>
                 <li><a href="#">Service</a></li>
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">Product</a></li>
@@ -83,7 +84,7 @@
                                 <button>Register</button>
                             </div>
                         </div>
-                        <div class="slider__three__right">
+                        <div class="slides__three__right">
                             <img src="./logo/slider.svg" alt="">
                         </div>
                     </div>
@@ -91,8 +92,11 @@
                 <div class="content__slider slider-controls">
                         <div class="slider-controls__btn">
                             <input type="radio" name="slider" id="slide-radio-0" checked>
+                            <label for="slide-radio-0"></label>
                             <input type="radio" name="slider" id="slide-radio-1">
+                            <label for="slide-radio-1"></label>
                             <input type="radio" name="slider" id="slide-radio-2">
+                            <label for="slide-radio-2"></label>
                         </div>
                 </div>
 
@@ -105,7 +109,8 @@
                 setInterval(() => {
                     idx = (idx + 1) % total;
                     slides.style.marginLeft = `-${idx * 100}%`;
-                }, 4000);
+                    radios[idx].checked = true;
+                }, 500000);
 
                 radios.forEach((radio, i) => {
                     radio.addEventListener('change', () => {
@@ -116,10 +121,10 @@
             </script>
             <div class="content__ourClient">
                 <div class="content__ourClient-head">
-                    <h2>Our Clients</h2>
+                    <p>Our Clients</p>
                 </div>
                 <div class="content__ourClient-content">
-                    <h3>We have been working with some Fortune 500+ clients</h3>
+                    <p>We have been working with some Fortune 500+ clients</p>
                 </div>
                 <div class="content__ourClient__logo">
                     <div class="content__ourClient__logo-item">
@@ -136,10 +141,10 @@
             <div class="manage">
                 <div class="manage__font">
                     <div class="manage__font-max">
-                        <h2>Manage your entire community in a single system</h2>
+                        <p>Manage your entire community in a single system</p>
                     </div>
                     <div class="manage__font-min">
-                        <h3>Who is Nextcent suitable for?</h3>
+                        <p>Who is Nextcent suitable for?</p>
                     </div>
                 </div>
                 <div class="manage__content">
@@ -163,7 +168,7 @@
                                 <img src="./logo/manage-logo2.svg">
                             </div>
                             <div class="manage__content__national_head-title">
-                                <p>National<br>Associations</p>
+                                <p>National Associations</p>
                             </div>
                         </div>
                         <div class="manage__content__national-text">
@@ -178,7 +183,7 @@
                                 <img src="./logo/manage-logo3.svg">
                             </div>
                             <div class="manage__content__groups_head-title">
-                                <p>National<br>Associations</p>
+                                <p>Clubs And Groups</p>
                             </div>
                         </div>
                         <div class="manage__content__groups-text">
@@ -267,7 +272,7 @@
                     <div class="product__site__design__content">
                         <div class="product__site__design__content design__footer">
                             <div class="design__footer__header">
-                                <p>How to design your site footer like we did ?</p>
+                                <p>How to design your site footer like we did</p>
                             </div>
                             <div class="design__footer__body">
                                 <p>Donec a eros justo.
@@ -407,7 +412,7 @@
                     <p>Pellentesque suscipit fringilla libero eu.</p>
                 </div>
                 <div class="footer__header__btn">
-                    <button>Get a Demo <img src="./icon/vectowhite.svg" alt=""></button>
+                    <button>Get a Demo<img src="./icon/vectowhite.svg" alt=""></button>
                 </div>
             </div>
             <div class="footer__content">

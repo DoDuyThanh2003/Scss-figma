@@ -23,7 +23,7 @@
 }
 
 @mixin manage_head {
-    width: 90%;
+    width: 80%;
     flex-direction: column;
     margin: 0 auto;
     @include betweenStyle();
@@ -35,6 +35,7 @@
     }
 
     &-title {
+        width: 80%;
         text-align: center;
         font-size: 28px;
         color: $d_grey-color;
@@ -43,11 +44,13 @@
 }
 
 @mixin manage_text {
-    width: 80%;
+    width: 85%;
     @include betweenStyle();
     margin: 0 auto;
     font-size: 14px;
     color: $grey-color;
+    text-align: center;
+  
 }
 
 @mixin statistical {
@@ -63,6 +66,7 @@
         p {
             font-size: 28px;
             color: $d_grey-color;
+            font-weight: bold;
         }
 
         span {
@@ -93,14 +97,14 @@
         @include gapStyle();
         gap: 16px;
         padding: 16px 0;
-        border-radius: 15px;
+        border-radius: 8px;
         position: absolute;
         top: 100%; // Đưa overlay vào giữa theo chiều dọc
         left: 50%; // Đưa overlay vào giữa theo chiều ngang
         transform: translate(-50%, -50%); // Canh giữa chính xác              
 
         &-title {
-            width: 70%;
+            width: 80%;
             font-size: 20px;
             color: $grey-color;
             text-align: center;
@@ -148,7 +152,7 @@
     padding: 50px 0;
 
     &__left {
-        width: 30%;
+        width: 50%;
         @include gapStyle();
         gap: 32px;
         margin: auto 0;
@@ -159,9 +163,15 @@
 
             &-head {
                 font-size: 64px;
+                p {
+                    font-weight: bold;
+                    color: $d_grey-color;
+                
+                }
 
                 span {
                     color: $green-color;
+                    display: block;
                 }
             }
 
@@ -174,7 +184,7 @@
             button {
                 background-color: $green-color;
                 color: $white-color;
-                width: 50%;
+                width: 25%;
                 border-radius: 4px;
                 border: none;
                 padding: 15px 0;
@@ -222,7 +232,7 @@
 
     &__right {
         order: 1;
-
+        width: 100%;
         img {
             width: 100%;
         }
